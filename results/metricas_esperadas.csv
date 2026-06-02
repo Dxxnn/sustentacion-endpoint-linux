@@ -1,0 +1,6 @@
+metrica,formula,uso_en_la_comparacion,estado
+Tasa de deteccion / recall,TP/(TP+FN),Mide capacidad para encontrar actividad sospechosa,Pendiente de validacion
+Tasa de falsos positivos,FP/(FP+TN),Mide ruido operativo sobre actividad legitima,Pendiente de validacion
+Precision,TP/(TP+FP),Mide confiabilidad de las alertas generadas,Pendiente de validacion
+F1 score,2*(precision*recall)/(precision+recall),Resume equilibrio entre precision y recall,Pendiente de validacion
+Tiempo de deteccion,t_alerta - t_inicio_evento,Mide rapidez operativa del enfoque,Pendiente de validacion

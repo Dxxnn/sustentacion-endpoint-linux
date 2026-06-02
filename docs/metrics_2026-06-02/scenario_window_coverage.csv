@@ -1,0 +1,4 @@
+scenario,expected_label,windows,retained_windows,event_count,rule_detected_windows,iforest_detected_windows
+benign_download_execute,suspicious,8,8,181,8,8
+normal_activity,normal,4,4,34364,0,4
+unusual_parent_child,suspicious,8,8,138,8,8

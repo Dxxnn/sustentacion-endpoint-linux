@@ -1,0 +1,8 @@
+dimension,name,count
+label,normal,34364
+label,suspicious,319
+label,unknown,1104
+scenario,normal_activity,34364
+scenario,unlabeled,1104
+scenario,benign_download_execute,181
+scenario,unusual_parent_child,138

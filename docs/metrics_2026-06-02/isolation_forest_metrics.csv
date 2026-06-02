@@ -1,0 +1,10 @@
+metric,value
+true_positives,149.0
+false_positives,1660.0
+true_negatives,32704.0
+false_negatives,170.0
+precision,0.08236594803758983
+recall_detection_rate,0.4670846394984326
+false_positive_rate,0.048306367128390176
+f1_score,0.1400375939849624
+training_note,entrenado con eventos etiquetados como normales

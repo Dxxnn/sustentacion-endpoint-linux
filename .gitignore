@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Generated telemetry can contain local paths and grows quickly.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+evidence/
+slides/*.pptx
+
+# Generated detector outputs and serialized models stay outside Git.
+results/*
+!results/.gitkeep
+!results/metricas_esperadas.csv

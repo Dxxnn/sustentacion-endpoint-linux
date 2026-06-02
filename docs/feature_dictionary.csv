@@ -1,0 +1,17 @@
+feature,description,type,source
+timestamp_iso,Timestamp del evento auditd en UTC,datetime,audit.log
+pid,Identificador del proceso hijo,numeric,SYSCALL
+ppid,Identificador del proceso padre,numeric,SYSCALL
+parent_process,Proceso padre inferido desde ppid,categorical,features
+child_process,Proceso hijo desde comm/exe,categorical,SYSCALL
+user,Usuario/UID asociado al evento,categorical,SYSCALL
+command,Argumentos reconstruidos de EXECVE,text,EXECVE
+path,Ruta principal del ejecutable o archivo,categorical,SYSCALL/PATH
+interval_seconds,Tiempo desde el evento anterior,numeric,features
+chain_depth,Profundidad aproximada de cadena padre-hijo,numeric,features
+has_curl_wget,Presencia de curl o wget,binary,command/exe
+chmod_event,Cambio de permisos o ejecucion de chmod,binary,command/syscall
+exec_from_tmp,Ejecucion desde directorio temporal del laboratorio,binary,path/command
+download_then_execute_window,Evento cercano a descarga previa,binary,features
+scenario,Escenario experimental asignado,categorical,scenario_labels.csv
+label,Etiqueta normal o suspicious,categorical,scenario_labels.csv
