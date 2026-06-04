@@ -25,16 +25,16 @@ style: |
   footer { color: #5b6b63; }
 ---
 
-# Comparacion entre reglas tipo SIEM e Isolation Forest
+# Comparación entre reglas tipo SIEM e Isolation Forest
 
 ## Cadenas de procesos sospechosas en endpoints Linux instrumentados con auditd
 
-Daniel Esteban Lopez Suarez  
-Ingenieria de Sistemas - Universidad EAN  
-Primera sustentacion
+Daniel Esteban López Suárez  
+Ingeniería de Sistemas - Universidad EAN  
+Primera sustentación
 
 <!--
-Oral: Presenta el proyecto como una comparacion experimental, no como una promesa de que ML siempre gana.
+Oral: Presenta el proyecto como una comparación experimental, no como una promesa de que ML siempre gana.
 -->
 
 ---
@@ -45,15 +45,15 @@ Oral: Presenta el proyecto como una comparacion experimental, no como una promes
 <div>
 
 - Analistas **L1, L2 y L3**
-- Alertas desde **SIEM / EDR / telemetria**
+- Alertas desde **SIEM / EDR / telemetría**
 - Muchos eventos son **falsos positivos**
-- El problema: distinguir **secuencia legitima** vs **secuencia sospechosa**
+- El problema: distinguir **secuencia legítima** vs **secuencia sospechosa**
 
 </div>
 <div class="warn">
 
 **Idea clave**  
-No falta telemetria: falta contexto para decidir si una cadena de procesos merece respuesta.
+No falta telemetría: falta contexto para decidir si una cadena de procesos merece respuesta.
 
 </div>
 </div>
@@ -66,29 +66,29 @@ Oral: Arranca con el caso realista del SOC. Cada falso positivo consume tiempo y
 
 # Pregunta y objetivos
 
-**Pregunta:** ¿que diferencias de desempeño existen entre reglas tipo SIEM y un detector de anomalías con ML para identificar relaciones padre-hijo inusuales y descarga seguida de ejecucion?
+**Pregunta:** ¿Qué diferencias de desempeño existen entre reglas tipo SIEM y un detector de anomalías con ML para identificar relaciones padre-hijo inusuales y descarga seguida de ejecución?
 
 <div class="three">
 <div class="box"><strong>Laboratorio</strong><br/>VM Linux + auditd</div>
 <div class="box"><strong>Escenarios</strong><br/>normal y sospechoso</div>
-<div class="box"><strong>Evaluacion</strong><br/>deteccion, falsos positivos y tiempo</div>
+<div class="box"><strong>Evaluación</strong><br/>detección, falsos positivos y tiempo</div>
 </div>
 
 <!--
-Oral: Enfatiza que el objetivo general es comparar ambos enfoques bajo las mismas condiciones y con metricas homogeneas.
+Oral: Enfatiza que el objetivo general es comparar ambos enfoques bajo las mismas condiciones y con métricas homogéneas.
 -->
 
 ---
 
 # Estado del arte sintetizado
 
-| Enfoque | Aporte | Limitacion |
+| Enfoque | Aporte | Limitación |
 |---|---|---|
 | Reglas / SIEM | Explicabilidad y control | Rigidez ante variaciones |
 | Anomalías / ML | Detecta desviaciones | Riesgo de falsos positivos |
-| Logs modernos | Secuencias y grafos | Dependen de buena representacion |
+| Logs modernos | Secuencias y grafos | Dependen de buena representación |
 
-**Brecha:** comparacion directa sobre procesos Linux con auditd en laboratorio local.
+**Brecha:** comparación directa sobre procesos Linux con auditd en laboratorio local.
 
 <!--
 Oral: Menciona que la literatura reciente resalta la importancia de representar bien los registros, no solo elegir un modelo potente.
@@ -96,12 +96,12 @@ Oral: Menciona que la literatura reciente resalta la importancia de representar 
 
 ---
 
-# Metodologia experimental
+# Metodología experimental
 
-![Flujo metodologia](assets/methodology_flow.svg)
+![Flujo metodología](assets/methodology_flow.svg)
 
 <!--
-Oral: Recorre las cinco etapas y conecta cada una con evidencia: VM, escenarios, logs, variables y comparacion.
+Oral: Recorre las cinco etapas y conecta cada una con evidencia: VM, escenarios, logs, variables y comparación.
 -->
 
 ---
@@ -111,12 +111,12 @@ Oral: Recorre las cinco etapas y conecta cada una con evidencia: VM, escenarios,
 ![Arquitectura laboratorio](assets/lab_architecture.svg)
 
 <!--
-Oral: Explica que auditd no es el detector; es la fuente de telemetria. La deteccion ocurre despues, con reglas y con Isolation Forest.
+Oral: Explica que auditd no es el detector; es la fuente de telemetría. La detección ocurre después, con reglas y con Isolation Forest.
 -->
 
 ---
 
-# Avance tecnico: evidencia a mostrar
+# Avance técnico: evidencia a mostrar
 
 <div class="three">
 <div class="box"><strong>1</strong><br/>VM Linux creada</div>
@@ -130,7 +130,7 @@ Oral: Explica que auditd no es el detector; es la fuente de telemetria. La detec
 <div class="box"><strong>6</strong><br/>dataset inicial</div>
 </div>
 
-**Nota:** las metricas finales quedan pendientes hasta completar repeticiones.
+**Nota:** las métricas finales quedan pendientes hasta completar repeticiones.
 
 <!--
 Oral: No vendas resultados. Vende trazabilidad: escenario ejecutado, log capturado, variable construida.
@@ -138,18 +138,18 @@ Oral: No vendas resultados. Vende trazabilidad: escenario ejecutado, log captura
 
 ---
 
-# Metricas de evaluacion
+# Métricas de evaluación
 
-| Metrica | Que responde |
+| Métrica | Qué responde |
 |---|---|
-| Recall / tasa de deteccion | ¿cuanto de lo sospechoso detecta? |
-| Tasa de falsos positivos | ¿cuanto ruido produce? |
-| Precision | ¿que tan confiable es la alerta? |
-| F1 score | ¿como equilibra precision y recall? |
-| Tiempo de deteccion | ¿que tan rapido alerta? |
+| Recall / tasa de detección | ¿Cuánto de lo sospechoso detecta? |
+| Tasa de falsos positivos | ¿Cuánto ruido produce? |
+| Precisión | ¿Qué tan confiable es la alerta? |
+| F1 score | ¿Cómo equilibra precisión y recall? |
+| Tiempo de detección | ¿Qué tan rápido alerta? |
 
 <!--
-Oral: Relaciona las metricas con la operacion del SOC: detectar mas no sirve si el ruido vuelve inmanejable la respuesta.
+Oral: Relaciona las métricas con la operación del SOC: detectar más no sirve si el ruido vuelve inmanejable la respuesta.
 -->
 
 ---
@@ -170,7 +170,7 @@ Oral: Relaciona las metricas con la operacion del SOC: detectar mas no sirve si 
 
 **Isolation Forest**
 
-- Aprende linea base
+- Aprende línea base
 - Puede detectar desviaciones
 - Requiere calibrar falsos positivos
 
@@ -180,21 +180,21 @@ Oral: Relaciona las metricas con la operacion del SOC: detectar mas no sirve si 
 <div class="warn">Aporte: reducir ruido operativo y apoyar decisiones de monitoreo en Linux con evidencia reproducible.</div>
 
 <!--
-Oral: La contribucion es comparativa y practica. No declares ganador antes de medir.
+Oral: La contribución es comparativa y práctica. No declares ganador antes de medir.
 -->
 
 ---
 
-# Cierre y proximos pasos
+# Cierre y próximos pasos
 
 1. Completar repeticiones por escenario.
 2. Consolidar dataset auditd.
-3. Calcular matriz de confusion y tiempos.
+3. Calcular matriz de confusión y tiempos.
 4. Ajustar reglas y umbral del modelo.
-5. Preparar sustentacion final con resultados validados.
+5. Preparar sustentación final con resultados validados.
 
-**Mensaje final:** problema delimitado, metodologia coherente y prototipo reproducible.
+**Mensaje final:** problema delimitado, metodología coherente y prototipo reproducible.
 
 <!--
-Oral: Cierra con seguridad: la primera sustentacion prueba claridad, avance y ruta tecnica defendible.
+Oral: Cierra con seguridad: la primera sustentación prueba claridad, avance y ruta técnica defendible.
 -->
