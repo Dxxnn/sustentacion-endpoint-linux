@@ -1,4 +1,20 @@
-# Primera sustentacion - deteccion en endpoints Linux
+# Linux Endpoint Detection Lab
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Ubuntu%2024.04-E95420?logo=ubuntu&logoColor=white)
+![Security telemetry](https://img.shields.io/badge/Telemetry-auditd-2DD4BF)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2EA44F.svg)](LICENSE)
+
+</div>
+
+Laboratorio reproducible de seguridad para endpoints Linux que compara reglas
+tipo SIEM con Isolation Forest sobre telemetría de `auditd`.
+
+<div align="center">
+  <img src="slides/assets/lab_architecture.svg" alt="Arquitectura del laboratorio de detección en endpoints Linux" width="100%">
+</div>
 
 Proyecto base para preparar la primera sustentacion de proyecto de grado en Ingenieria de Sistemas, Universidad EAN.
 
